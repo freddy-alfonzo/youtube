@@ -46,7 +46,7 @@ function VideoDetails() {
 
               {
                 videoDetails?.snippet?.tags?.map((e, index) => {
-                  return <a key={index} style={{ display: index > 3 ? "none" : "" }} className="text-[#3366CC] text-[13px] font-normal" href={`${e}`}>{e?.slice(0, 15)}</a>
+                  return <a style={{ display: index > 3 ? "none" : "" }} className="text-[#3366CC] text-[13px] font-normal" href={`${e}`}>{e?.slice(0, 15)}</a>
                 })
               }
             </div>
@@ -76,7 +76,6 @@ function VideoDetails() {
           {
             relatedVideos?.map((e, index) => {
               return (
-                
                 <Video key={index + 2} thumbnail={e.snippet?.thumbnails?.medium?.url} width="210px" title={e.snippet.title} channel={e.snippet.channelTitle} on={timeSince(new Date(Date.parse(e.snippet.publishedAt) - aDay))} channelId={e.snippet.channelId} videoId={e.id.videoId} />
               )
             })
